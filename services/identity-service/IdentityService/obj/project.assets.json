@@ -99,6 +99,40 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "Duende.IdentityServer.EntityFramework/7.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Duende.IdentityServer": "7.1.0",
+          "Duende.IdentityServer.EntityFramework.Storage": "7.1.0"
+        },
+        "compile": {
+          "lib/net9.0/Duende.IdentityServer.EntityFramework.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/Duende.IdentityServer.EntityFramework.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Duende.IdentityServer.EntityFramework.Storage/7.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Duende.IdentityServer.Storage": "7.1.0",
+          "Microsoft.EntityFrameworkCore.Relational": "9.0.0"
+        },
+        "compile": {
+          "lib/net9.0/Duende.IdentityServer.EntityFramework.Storage.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/Duende.IdentityServer.EntityFramework.Storage.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Duende.IdentityServer.Storage/7.1.0": {
         "type": "package",
         "dependencies": {
@@ -1921,6 +1955,42 @@
         "lib/net8.0/Duende.IdentityServer.AspNetIdentity.xml",
         "lib/net9.0/Duende.IdentityServer.AspNetIdentity.dll",
         "lib/net9.0/Duende.IdentityServer.AspNetIdentity.xml"
+      ]
+    },
+    "Duende.IdentityServer.EntityFramework/7.1.0": {
+      "sha512": "cQfRbQdL5T/hoX0OmD267ex4bZ1sqQz3vdmMjalQS2z0etF6JhK6x9UEfcU1THlMlQ9lNwvYqvpztt3bSCDi8Q==",
+      "type": "package",
+      "path": "duende.identityserver.entityframework/7.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README.md",
+        "duende.identityserver.entityframework.7.1.0.nupkg.sha512",
+        "duende.identityserver.entityframework.nuspec",
+        "icon.png",
+        "lib/net8.0/Duende.IdentityServer.EntityFramework.dll",
+        "lib/net8.0/Duende.IdentityServer.EntityFramework.xml",
+        "lib/net9.0/Duende.IdentityServer.EntityFramework.dll",
+        "lib/net9.0/Duende.IdentityServer.EntityFramework.xml"
+      ]
+    },
+    "Duende.IdentityServer.EntityFramework.Storage/7.1.0": {
+      "sha512": "4UEfUASLg9LwBguN+t8+wLsnTnJG6UkgZZDeaAGKtydmdQpkmmkrAjTgig6rQh9DDWCFFvqlBT3boYfVmTWZcA==",
+      "type": "package",
+      "path": "duende.identityserver.entityframework.storage/7.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README.md",
+        "duende.identityserver.entityframework.storage.7.1.0.nupkg.sha512",
+        "duende.identityserver.entityframework.storage.nuspec",
+        "icon.png",
+        "lib/net8.0/Duende.IdentityServer.EntityFramework.Storage.dll",
+        "lib/net8.0/Duende.IdentityServer.EntityFramework.Storage.xml",
+        "lib/net9.0/Duende.IdentityServer.EntityFramework.Storage.dll",
+        "lib/net9.0/Duende.IdentityServer.EntityFramework.Storage.xml"
       ]
     },
     "Duende.IdentityServer.Storage/7.1.0": {
@@ -5198,6 +5268,8 @@
     "net9.0": [
       "Duende.IdentityServer >= 7.1.0",
       "Duende.IdentityServer.AspNetIdentity >= 7.1.0",
+      "Duende.IdentityServer.EntityFramework >= 7.1.0",
+      "Duende.IdentityServer.EntityFramework.Storage >= 7.1.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 9.0.1",
       "Microsoft.AspNetCore.OpenApi >= 9.0.1",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.1",
@@ -5254,6 +5326,14 @@
             "version": "[7.1.0, )"
           },
           "Duende.IdentityServer.AspNetIdentity": {
+            "target": "Package",
+            "version": "[7.1.0, )"
+          },
+          "Duende.IdentityServer.EntityFramework": {
+            "target": "Package",
+            "version": "[7.1.0, )"
+          },
+          "Duende.IdentityServer.EntityFramework.Storage": {
             "target": "Package",
             "version": "[7.1.0, )"
           },

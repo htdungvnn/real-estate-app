@@ -52,6 +52,14 @@
               "target": "Package",
               "version": "[7.1.0, )"
             },
+            "Duende.IdentityServer.EntityFramework": {
+              "target": "Package",
+              "version": "[7.1.0, )"
+            },
+            "Duende.IdentityServer.EntityFramework.Storage": {
+              "target": "Package",
+              "version": "[7.1.0, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.1, )"

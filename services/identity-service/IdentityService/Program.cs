@@ -23,10 +23,19 @@ builder.Services.AddIdentityServer(options =>
     options.Events.RaiseFailureEvents = true;
     options.Events.RaiseErrorEvents = true;
 })
-.AddAspNetIdentity<User>() // Ensure this is included
-.AddInMemoryIdentityResources(Config.IdentityResources)
-.AddInMemoryApiScopes(Config.ApiScopes)
-.AddInMemoryClients(Config.Clients);
+.AddAspNetIdentity<User>() // Identity integration
+.AddConfigurationStore(options =>
+{
+    options.ConfigureDbContext = db =>
+        db.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
+        sqlOptions => sqlOptions.MigrationsAssembly(typeof(Program).Assembly.FullName));
+})
+.AddOperationalStore(options =>
+{
+    options.ConfigureDbContext = db =>
+        db.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
+        sqlOptions => sqlOptions.MigrationsAssembly(typeof(Program).Assembly.FullName));
+});
 
 // Add Swagger
 builder.Services.AddEndpointsApiExplorer();

@@ -3,14 +3,14 @@ version: "3.8"
 services:
   identity-service:
     build:
-      context: ./services/identity-service
+      context: ../../services/identity-service/IdentityService
       dockerfile: Dockerfile
     ports:
       - "5000:80"
 
   chat-service:
     build:
-      context: ./services/chat-service
+      context: ../../services/chat-service/ChatService
       dockerfile: Dockerfile
     ports:
       - "5002:80"
@@ -21,7 +21,7 @@ services:
 
   property-service:
     build:
-      context: ./services/property-service
+      context: ../../services/property-service/PropertyService
       dockerfile: Dockerfile
     ports:
       - "5004:80"
@@ -32,7 +32,7 @@ services:
 
   search-service:
     build:
-      context: ./services/search-service
+      context: ../../services/search-service/SearchService
       dockerfile: Dockerfile
     ports:
       - "5005:80"
@@ -43,7 +43,7 @@ services:
 
   user-service:
     build:
-      context: ./services/user-service
+      context: ../../services/user-service/UserService
       dockerfile: Dockerfile
     ports:
       - "5006:80"
