@@ -201,3 +201,15 @@
 4. Real-time notifications and chat updates through **SignalR** and **Kafka**.
 5. Emails dispatched by **Mail Service** using **MailKit**.
 6. **CI/CD** ensures rapid and reliable deployment of updates.
+
+## 2. Architecture Map
+
+[Database Architecture](./docs/Database%20Architecture.txt) document.
+
+[Deployment Architecture](./docs/Deployment%20Architecture.txt) document.
+
+[Event Flow with Kafka](./docs/Event%20Flow%20with%20Kafka.txt) document.
+
+[Frontend Interaction Diagram](./docs/Frontend%20Interaction%20Diagram.txt) document.
+
+[High-Level Architecture Diagram](./docs/High-Level%20Architecture%20Diagram.txt) document.

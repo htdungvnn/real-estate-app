@@ -1,18 +1,91 @@
 version: "3.8"
+
 services:
-  user-service:
+  action-tracking-service:
     build:
-      context: ../services/user-service/UserService
+      context: ../../services/action-tracking-service/ActionTrackingService
       dockerfile: Dockerfile
     ports:
       - "5001:80"
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-  property-service:
+    depends_on:
+      - mongodb
+
+  chat-service:
     build:
-      context: ../services/property-service/PropertyService
+      context: ../../services/chat-service/ChatService
       dockerfile: Dockerfile
     ports:
       - "5002:80"
+    depends_on:
+      - redis
+
+  identity-service:
+    build:
+      context: ../../services/identity-service/IdentityService
+      dockerfile: Dockerfile
+    ports:
+      - "5000:80"
+
+  notification-service:
+    build:
+      context: ../../services/notification-service/NotificationService
+      dockerfile: Dockerfile
+    ports:
+      - "5003:80"
+    depends_on:
+      - redis
+
+  property-service:
+    build:
+      context: ../../services/property-service/PropertyService
+      dockerfile: Dockerfile
+    ports:
+      - "5004:80"
+
+  search-service:
+    build:
+      context: ../../services/search-service/SearchService
+      dockerfile: Dockerfile
+    ports:
+      - "5005:80"
+    depends_on:
+      - elasticsearch
+
+  user-service:
+    build:
+      context: ../../services/user-service/UserService
+      dockerfile: Dockerfile
+    ports:
+      - "5006:80"
+    depends_on:
+      - identity-service
+
+  redis:
+    image: redis:7
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+  mongodb:
+    image: mongo:6
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.9.0
+    container_name: elasticsearch
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
+      - discovery.type=single-node
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "YourStrong!Password"
+      ACCEPT_EULA: "Y"
