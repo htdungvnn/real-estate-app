@@ -80,6 +80,25 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "Duende.IdentityServer.AspNetIdentity/7.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Duende.IdentityServer": "7.1.0"
+        },
+        "compile": {
+          "lib/net9.0/Duende.IdentityServer.AspNetIdentity.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/Duende.IdentityServer.AspNetIdentity.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Duende.IdentityServer.Storage/7.1.0": {
         "type": "package",
         "dependencies": {
@@ -1884,6 +1903,24 @@
         "lib/net8.0/Duende.IdentityServer.xml",
         "lib/net9.0/Duende.IdentityServer.dll",
         "lib/net9.0/Duende.IdentityServer.xml"
+      ]
+    },
+    "Duende.IdentityServer.AspNetIdentity/7.1.0": {
+      "sha512": "awLtF58kAYw0KVZmdUCD7ixEcJRBgO5Hq8RTYmjHV9iQz/2b9kJxKmR9wgiN20HILg7wxD2k3XzpU7fHbtdffQ==",
+      "type": "package",
+      "path": "duende.identityserver.aspnetidentity/7.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README.md",
+        "duende.identityserver.aspnetidentity.7.1.0.nupkg.sha512",
+        "duende.identityserver.aspnetidentity.nuspec",
+        "icon.png",
+        "lib/net8.0/Duende.IdentityServer.AspNetIdentity.dll",
+        "lib/net8.0/Duende.IdentityServer.AspNetIdentity.xml",
+        "lib/net9.0/Duende.IdentityServer.AspNetIdentity.dll",
+        "lib/net9.0/Duende.IdentityServer.AspNetIdentity.xml"
       ]
     },
     "Duende.IdentityServer.Storage/7.1.0": {
@@ -5160,6 +5197,7 @@
   "projectFileDependencyGroups": {
     "net9.0": [
       "Duende.IdentityServer >= 7.1.0",
+      "Duende.IdentityServer.AspNetIdentity >= 7.1.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 9.0.1",
       "Microsoft.AspNetCore.OpenApi >= 9.0.1",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.1",
@@ -5212,6 +5250,10 @@
         "targetAlias": "net9.0",
         "dependencies": {
           "Duende.IdentityServer": {
+            "target": "Package",
+            "version": "[7.1.0, )"
+          },
+          "Duende.IdentityServer.AspNetIdentity": {
             "target": "Package",
             "version": "[7.1.0, )"
           },

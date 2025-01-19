@@ -4,7 +4,7 @@ namespace IdentityService.Models
 {
     public class User : IdentityUser
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string FirstName { get; set; } = string.Empty; // Provide default value
+        public string LastName { get; set; } = string.Empty;  // Provide default value
     }
 }

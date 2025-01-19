@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "gg9guPxh9TY=",
+  "dgSpecHash": "oDzCcsD2P3I=",
   "success": true,
   "projectFilePath": "/Users/htdung/Documents/real-estate-app/services/identity-service/IdentityService/IdentityService.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "/Users/htdung/.nuget/packages/azure.identity/1.11.4/azure.identity.1.11.4.nupkg.sha512",
     "/Users/htdung/.nuget/packages/duende.identitymodel/7.0.0/duende.identitymodel.7.0.0.nupkg.sha512",
     "/Users/htdung/.nuget/packages/duende.identityserver/7.1.0/duende.identityserver.7.1.0.nupkg.sha512",
+    "/Users/htdung/.nuget/packages/duende.identityserver.aspnetidentity/7.1.0/duende.identityserver.aspnetidentity.7.1.0.nupkg.sha512",
     "/Users/htdung/.nuget/packages/duende.identityserver.storage/7.1.0/duende.identityserver.storage.7.1.0.nupkg.sha512",
     "/Users/htdung/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/htdung/.nuget/packages/microsoft.aspnetcore.authentication.openidconnect/9.0.0/microsoft.aspnetcore.authentication.openidconnect.9.0.0.nupkg.sha512",

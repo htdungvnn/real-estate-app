@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using PropertyService.Data;
 using PropertyService.Models;
 
@@ -9,6 +10,21 @@ builder.Services.AddDbContext<PropertyDbContext>(options =>
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
+// Add authentication
+builder.Services.AddAuthentication("Bearer")
+    .AddJwtBearer("Bearer", options =>
+    {
+        options.Authority = builder.Configuration["IdentityService:Authority"]; // URL of IdentityService
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateAudience = false // Not validating audience in this example
+        };
+    });
+
+// Add authorization
+builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
@@ -25,6 +41,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseAuthentication(); // Enable JWT authentication
+app.UseAuthorization();  // Enable authorization middleware
 
 var group = app.MapGroup("/api/properties");
 

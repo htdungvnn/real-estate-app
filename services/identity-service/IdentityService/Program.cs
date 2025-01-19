@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add DbContext
+// Add DbContext for Identity
 builder.Services.AddDbContext<IdentityDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -23,10 +23,10 @@ builder.Services.AddIdentityServer(options =>
     options.Events.RaiseFailureEvents = true;
     options.Events.RaiseErrorEvents = true;
 })
+.AddAspNetIdentity<User>() // Ensure this is included
 .AddInMemoryIdentityResources(Config.IdentityResources)
 .AddInMemoryApiScopes(Config.ApiScopes)
-.AddInMemoryClients(Config.Clients)
-.AddAspNetIdentity<User>();
+.AddInMemoryClients(Config.Clients);
 
 // Add Swagger
 builder.Services.AddEndpointsApiExplorer();
@@ -34,14 +34,7 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Migrate database
-using (var scope = app.Services.CreateScope())
-{
-    var dbContext = scope.ServiceProvider.GetRequiredService<IdentityDbContext>();
-    dbContext.Database.Migrate();
-}
-
-// Configure middleware
+// Configure the app
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -49,7 +42,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseIdentityServer();
+app.UseIdentityServer(); // Use IdentityServer middleware
 app.UseAuthorization();
+
 app.MapGet("/", () => "Identity Service is running...");
+
 app.Run();

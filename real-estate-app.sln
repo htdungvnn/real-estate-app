@@ -33,6 +33,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "action-tracking-service", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActionTrackingService", "services\action-tracking-service\ActionTrackingService\ActionTrackingService.csproj", "{470038E4-C394-451C-AD2F-FF8284081B89}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "identity-service", "identity-service", "{F82AB9B6-2840-4A0D-BE94-D36C5BB46F09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityService", "services\identity-service\IdentityService\IdentityService.csproj", "{6411B262-9A2E-46BF-AFD1-689717DA290A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +71,10 @@ Global
 		{470038E4-C394-451C-AD2F-FF8284081B89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{470038E4-C394-451C-AD2F-FF8284081B89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{470038E4-C394-451C-AD2F-FF8284081B89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6411B262-9A2E-46BF-AFD1-689717DA290A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6411B262-9A2E-46BF-AFD1-689717DA290A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6411B262-9A2E-46BF-AFD1-689717DA290A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6411B262-9A2E-46BF-AFD1-689717DA290A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,6 +93,8 @@ Global
 		{E7CD7234-F7FB-4E06-8B1D-0E26AE206452} = {8185743B-3A47-4EEE-835B-E31DC12374E7}
 		{BFF6C132-30B2-4994-A859-339F38C4B1FD} = {5854FF58-B8C5-05C6-5BF2-ACE42193F22B}
 		{470038E4-C394-451C-AD2F-FF8284081B89} = {BFF6C132-30B2-4994-A859-339F38C4B1FD}
+		{F82AB9B6-2840-4A0D-BE94-D36C5BB46F09} = {5854FF58-B8C5-05C6-5BF2-ACE42193F22B}
+		{6411B262-9A2E-46BF-AFD1-689717DA290A} = {F82AB9B6-2840-4A0D-BE94-D36C5BB46F09}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CEF06758-2DF1-4ECD-A37D-78069DD7E70A}
