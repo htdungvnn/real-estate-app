@@ -29,29 +29,28 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
-      # Step 4: Build and push all service images
+      # Step 4: Build and push service images
       - name: Build and push service images
         run: |
-          # Define services and build/push each one
+          # Define services and their build contexts
+          declare -A SERVICES
           SERVICES=(
-            "user-service"
-            "property-service"
-            "search-service"
-            "notification-service"
-            "action-tracking-service"
-            "chat-service"
-            "identity-service"
+            ["identity-service"]="../../services/identity-service/IdentityService"
+            ["chat-service"]="../../services/chat-service/ChatService"
+            ["property-service"]="../../services/property-service/PropertyService"
+            ["search-service"]="../../services/search-service/SearchService"
+            ["user-service"]="../../services/user-service/UserService"
           )
 
-          for SERVICE in "${SERVICES[@]}"
+          for SERVICE in "${!SERVICES[@]}"
           do
-            # Define image name
+            BUILD_CONTEXT=${SERVICES[$SERVICE]}
             IMAGE_NAME=$DOCKER_REGISTRY/$SERVICE:latest
 
-            echo "Building and pushing $IMAGE_NAME..."
+            echo "Building and pushing $IMAGE_NAME using context $BUILD_CONTEXT..."
 
             # Build the Docker image
-            docker build -t $IMAGE_NAME ./services/$SERVICE
+            docker build -t $IMAGE_NAME $BUILD_CONTEXT
 
             # Push the Docker image
             docker push $IMAGE_NAME
