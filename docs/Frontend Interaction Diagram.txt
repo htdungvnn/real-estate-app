@@ -1,0 +1,19 @@
++-------------------------+
+|  Angular Frontend       |
+|                         |
+|  Pages & Components     |
+|  +-------------------+  |
+|  | Authentication    |  |<--- Fetch user token
+|  | via Identity API  |  |
+|  +-------------------+  |
+|                         |
+|  +-------------------+  |
+|  | Property Listings |<---- Fetch properties (Property API)
+|  |                   |  |
+|  +-------------------+  |
+|                         |
+|  +-------------------+  |
+|  | Real-Time Chat    |<---- Communicate via SignalR API
+|  |                   |  |
+|  +-------------------+  |
++-------------------------+

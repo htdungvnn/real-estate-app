@@ -1,0 +1,33 @@
+                         +---------------------+
+                         |   Angular Frontend  |
+                         +---------------------+
+                                   |
+                  +----------------v-----------------+
+                  |         API Gateway (Optional)   |
+                  +----------------+------------------+
+                                   |
+        +--------------------------+--------------------------+
+        |                                                       |
++-------v--------+                                      +-------v--------+
+| User Service   |                                      | Property Service|
++----------------+                                      +----------------+
+| Auth & Identity|                                      | Property Listings|
+| (SQL Server)   |                                      | Metadata Search |
++----------------+                                      +----------------+
+        |                                                       |
++-------v--------+                                      +-------v--------+
+| Identity       |        Kafka (Event Bus)            | Search Service  |
+| Service        | <---------------------------------> | (ElasticSearch) |
+| (IdentityServer|                                      +----------------+
++----------------+
+        |                                                       |
++-------v--------+                                      +-------v--------+
+| Action Tracking|                                      | Chat Service   |
+| (MongoDB)      | <-------- SignalR (Real-Time)------->| (SignalR/Redis)|
++----------------+                                      +----------------+
+        |
++-------v--------+
+| Notification   |
+| Service (Email |
+| via MailKit)   |
++----------------+

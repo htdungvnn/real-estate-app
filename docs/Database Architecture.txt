@@ -1,0 +1,9 @@
++------------------+   +------------------+   +--------------------+
+|   SQL Server     |   |   MongoDB        |   |  ElasticSearch     |
++------------------+   +------------------+   +--------------------+
+| Users Table       |   | User Actions    |   | Property Listings   |
+| Properties Table  |   | (e.g., Likes,   |   | Search Index        |
+| Transactions      |   | Clicks, Views)  |   | Full-Text Search    |
+|                   |   +------------------+   +--------------------+
+|                   |
++-------------------+
