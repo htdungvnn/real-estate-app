@@ -35,11 +35,13 @@ jobs:
           # Define services and their build contexts
           declare -A SERVICES
           SERVICES=(
-            ["identity-service"]="../../services/identity-service/IdentityService"
-            ["chat-service"]="../../services/chat-service/ChatService"
-            ["property-service"]="../../services/property-service/PropertyService"
-            ["search-service"]="../../services/search-service/SearchService"
-            ["user-service"]="../../services/user-service/UserService"
+            ["identity-service"]="services/identity-service"
+            ["chat-service"]="services/chat-service"
+            ["property-service"]="services/property-service"
+            ["search-service"]="services/search-service"
+            ["user-service"]="services/user-service"
+            ["notification-service"]="services/notification-service"
+            ["action-tracking-service"]="services/action-tracking-service"
           )
 
           for SERVICE in "${!SERVICES[@]}"
